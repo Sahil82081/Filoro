@@ -102,65 +102,35 @@ export const HomePage: React.FC = () => {
           aria-hidden="true"
         />
 
-        <div className="relative grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-12 items-center">
-          {/* Left Column: Editorial Headline & Actions */}
-          <div className="lg:col-span-7 space-y-4 sm:space-y-6">
-            {/* Main Headline (Exact User Request) */}
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-display font-bold tracking-tight text-[#202020] dark:text-[#FFFDF7] leading-[1.12]">
-              <span>Your files, </span>
-              <span className="relative inline-block text-[#202020] dark:text-[#FFFDF7]">
-                Our tools.
-                <span className="absolute bottom-1 left-0 right-0 h-2.5 bg-[#FFBF00]/30 dark:bg-[#FFBF00]/25 -z-10 rounded-sm" />
-              </span>
-              <br className="hidden sm:inline" />
-              <span> One </span>
-              <span className="text-[#FF7900]">simple</span>
-              <span> place.</span>
-            </h1>
+        <div className="relative max-w-3xl space-y-4 sm:space-y-6">
+          {/* Main Headline (Exact User Request) */}
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-display font-bold tracking-tight text-[#202020] dark:text-[#FFFDF7] leading-[1.12]">
+            <span>Your files, </span>
+            <span className="relative inline-block text-[#202020] dark:text-[#FFFDF7]">
+              Our tools.
+              <span className="absolute bottom-1 left-0 right-0 h-2.5 bg-[#FFBF00]/30 dark:bg-[#FFBF00]/25 -z-10 rounded-sm" />
+            </span>
+            <br className="hidden sm:inline" />
+            <span> One </span>
+            <span className="text-[#FF7900]">simple</span>
+            <span> place.</span>
+          </h1>
 
-            <p className="text-sm sm:text-base md:text-lg text-[#666666] dark:text-[#B8AF9F] leading-relaxed max-w-xl font-normal">
-              Convert, compress, edit and organize documents and media effortlessly. Everything processes locally on temporary staging with zero permanent cloud storage.
-            </p>
+          <p className="text-sm sm:text-base md:text-lg text-[#666666] dark:text-[#B8AF9F] leading-relaxed max-w-2xl font-normal">
+            Convert, compress, edit and organize documents and media effortlessly. Everything processes locally on temporary staging with zero permanent cloud storage.
+          </p>
 
-            {/* Action Button */}
-            <div className="pt-1">
-              <Button
-                variant="primary"
-                size="lg"
-                onClick={scrollToTools}
-                rightIcon={<ArrowRight className="w-4 h-4" />}
-                className="w-full sm:w-auto shadow-warm-md hover:shadow-gold-glow"
-              >
-                Choose a Tool
-              </Button>
-            </div>
-          </div>
-
-          {/* Right Column: Instant Working File Dropzone */}
-          <div className="lg:col-span-5">
-            <div
-              onDragOver={(e) => {
-                e.preventDefault();
-                e.stopPropagation();
-              }}
-              onDrop={(e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                setUploadModalOpen(true);
-              }}
-              onClick={() => setUploadModalOpen(true)}
-              className="group cursor-pointer rounded-2xl sm:rounded-3xl border-2 border-dashed border-[#EDE7D9] dark:border-[#332B20] hover:border-[#FFBF00] dark:hover:border-[#FFBF00] bg-[#F8F5EE]/70 dark:bg-[#16120D]/70 hover:bg-[#FBF3DF]/50 dark:hover:bg-[#1E1913] p-5 sm:p-8 flex flex-col items-center justify-center text-center transition-all duration-200 shadow-warm-xs hover:shadow-warm-md"
+          {/* Action Button */}
+          <div className="pt-2">
+            <Button
+              variant="primary"
+              size="lg"
+              onClick={scrollToTools}
+              rightIcon={<ArrowRight className="w-4 h-4" />}
+              className="w-full sm:w-auto shadow-warm-md hover:shadow-gold-glow"
             >
-              <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-[#FFBF00]/15 group-hover:bg-[#FFBF00] text-[#FF7900] group-hover:text-[#202020] flex items-center justify-center transition-all duration-200 mb-3 sm:mb-4 shadow-warm-xs">
-                <Upload className="w-6 h-6 sm:w-7 sm:h-7 transition-transform duration-200 group-hover:-translate-y-0.5" />
-              </div>
-              <h3 className="text-sm sm:text-base font-bold font-display text-[#202020] dark:text-[#FFFDF7] group-hover:text-[#FF7900] dark:group-hover:text-[#FFBF00] transition-colors">
-                Drop your file here to get started
-              </h3>
-              <p className="mt-1 sm:mt-1.5 text-xs text-[#666666] dark:text-[#B8AF9F] max-w-xs leading-relaxed">
-                PDFs, Images, Word, Excel, and PowerPoint files supported up to 50 MB
-              </p>
-            </div>
+              Choose a Tool
+            </Button>
           </div>
         </div>
       </section>
