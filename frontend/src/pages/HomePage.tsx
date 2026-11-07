@@ -160,10 +160,6 @@ export const HomePage: React.FC = () => {
               <p className="mt-1 sm:mt-1.5 text-xs text-[#666666] dark:text-[#B8AF9F] max-w-xs leading-relaxed">
                 PDFs, Images, Word, Excel, and PowerPoint files supported up to 50 MB
               </p>
-              <div className="mt-4 sm:mt-5 inline-flex items-center gap-2 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-xl bg-[#FFFFFF] dark:bg-[#221D16] border border-[#EDE7D9] dark:border-[#332B20] text-xs font-semibold text-[#202020] dark:text-[#FFFDF7] group-hover:border-[#FFBF00] transition-colors shadow-warm-xs">
-                <span>Browse from Device</span>
-                <ArrowRight className="w-3.5 h-3.5 text-[#FF7900]" />
-              </div>
             </div>
           </div>
         </div>
