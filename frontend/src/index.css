@@ -1,0 +1,168 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Official Palette */
+  --gold: #FFBF00;
+  --champagne: #F2CF7E;
+  --lemon: #FFE642;
+  --orange: #FF7900;
+  
+  /* Supporting Palette - Light Mode */
+  --text-primary: #202020;
+  --text-secondary: #666666;
+  --bg-light: #FFFDF7;
+  --surface-white: #FFFFFF;
+  --surface-dark: #242018;
+  --border-subtle: #EDE7D9;
+  --border-warm: #E2DAC8;
+  --surface-warm: #F8F5EE;
+}
+
+html.dark {
+  /* Supporting Palette - Dark Mode (Warm Espresso Charcoal & Rich Gold) */
+  --text-primary: #FFFDF7;
+  --text-secondary: #B8AF9F;
+  --bg-light: #14110C;
+  --surface-white: #1F1912;
+  --surface-dark: #120F0A;
+  --border-subtle: #332B20;
+  --border-warm: #42382A;
+  --surface-warm: #1A1510;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+    background-color: var(--bg-light);
+    color: var(--text-primary);
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    transition: background-color 0.25s ease, color 0.25s ease;
+  }
+
+  body {
+    background-color: var(--bg-light);
+    color: var(--text-primary);
+    overflow-x: hidden;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: background-color 0.25s ease, color 0.25s ease;
+  }
+
+  /* Universal High-Contrast Visible 2px Golden Focus Ring */
+  :focus-visible {
+    outline: 2px solid var(--gold) !important;
+    outline-offset: 3px !important;
+    border-radius: 8px;
+  }
+
+  button, a, input, select, textarea {
+    touch-action: manipulation;
+  }
+}
+
+/* Typography Tokens & Utilities */
+.font-display {
+  font-family: 'Outfit', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Outfit', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  color: var(--text-primary);
+  letter-spacing: -0.025em;
+}
+
+.text-section-heading {
+  font-family: 'Outfit', system-ui, -apple-system, sans-serif;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+}
+
+.text-editorial-label {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+/* Attractive Warm Background Theme: Subtle Geometric Grid with Radial Fade */
+.warm-architectural-grid {
+  background-image: 
+    linear-gradient(to right, rgba(237, 231, 217, 0.65) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(237, 231, 217, 0.65) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(circle at 50% 25%, black 45%, transparent 85%);
+  -webkit-mask-image: radial-gradient(circle at 50% 25%, black 45%, transparent 85%);
+}
+
+html.dark .warm-architectural-grid {
+  background-image: 
+    linear-gradient(to right, rgba(242, 207, 126, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(242, 207, 126, 0.08) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+/* Delicate Paper Canvas Noise */
+.warm-canvas-texture {
+  background-image: radial-gradient(#EDE7D9 0.75px, transparent 0.75px);
+  background-size: 20px 20px;
+}
+
+html.dark .warm-canvas-texture {
+  background-image: radial-gradient(rgba(242, 207, 126, 0.1) 0.75px, transparent 0.75px);
+}
+
+/* Big Number Outline in Editorial Style */
+.outline-numeral {
+  font-feature-settings: "tnum";
+  font-variant-numeric: tabular-nums;
+  -webkit-text-stroke: 1.5px var(--champagne);
+  color: transparent;
+  transition: all 0.3s ease;
+}
+
+.group:hover .outline-numeral {
+  color: var(--champagne);
+}
+
+/* Custom accessible warm scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-light);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #E2DAC8;
+  border-radius: 9999px;
+  border: 2px solid var(--bg-light);
+}
+
+html.dark ::-webkit-scrollbar-thumb {
+  background: #42382A;
+  border: 2px solid #14110C;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #D4C9B3;
+}
+
+html.dark ::-webkit-scrollbar-thumb:hover {
+  background: #554836;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,0 +1,12 @@
+node_modules
+dist
+uploads
+outputs
+coverage
+*.log
+.git
+.gitignore
+.env
+.env.*
+src/__tests__
+vitest.config.*

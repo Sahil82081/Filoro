@@ -1,0 +1,7 @@
+# Fileora Robots Configuration
+User-agent: *
+Allow: /
+Disallow: /api/
+
+Sitemap: https://fileora.app/sitemap.xml
+

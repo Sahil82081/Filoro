@@ -1,0 +1,38 @@
+# Dependencies
+node_modules/
+
+# Production builds
+dist/
+build/
+*.tsbuildinfo
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary upload/output files
+backend/uploads/*
+!backend/uploads/.gitkeep
+backend/outputs/*
+!backend/outputs/.gitkeep
+uploads/
+outputs/
+
+# Test artifacts
+test-results/
+playwright-report/
+coverage/
+
+# Local binary tools (e.g. portable QPDF)
+backend/bin/
+
